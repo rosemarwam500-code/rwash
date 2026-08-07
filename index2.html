@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فول محمد رواش - المنيو</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3ecdd;
+    --bg-soft: #fffaf0;
+    --ink: #3a2d1f;
+    --ink-soft: #5a4631;
+    --coffee: #4a3323;
+    --coffee-deep: #2e2015;
+    --coffee-light: #6e4e2e;
+    --gold: #d9b878;
+    --gold-bright: #f2d896;
+    --sand: #eadfc7;
+    --cream: #fffdf8;
+    --olive: #6b7b46;
+    --shadow: rgba(63, 40, 19, 0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background:
+      radial-gradient(circle at 20% 5%, rgba(255,255,255,0.55) 0 2%, transparent 2.2%),
+      radial-gradient(circle at 90% 4%, rgba(217,184,120,0.22) 0 2%, transparent 2.2%),
+      repeating-linear-gradient(45deg, transparent 0 4px, rgba(255,255,255,0.22) 4px 5px),
+      var(--bg);
+    color: var(--ink);
+    padding-bottom: 40px;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 2px dashed rgba(110,78,46,0.34);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  body::before {
+    left: -170px;
+    top: 100px;
+  }
+
+  body::after {
+    right: -140px;
+    bottom: 90px;
+  }
+
+  header {
+    background:
+      linear-gradient(rgba(44, 31, 13, 0.78), rgba(44, 31, 13, 0.75)),
+      url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80') center/cover;
+    color: var(--cream);
+    text-align: center;
+    padding: 50px 15px 70px;
+    position: relative;
+    overflow: hidden;
+    min-height: 230px;
+  }
+
+  header::before,
+  header::after {
+    content: '●';
+    position: absolute;
+    top: 28px;
+    font-size: 2rem;
+    color: rgba(217,184,120,0.75);
+  }
+
+  header::before { left: 36px; }
+  header::after { right: 36px; }
+
+  header .title-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  header h1 {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(2.7rem, 5vw, 4rem);
+    color: var(--gold-bright);
+    line-height: 1.06;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.65);
+  }
+
+  header .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid rgba(255,248,238,0.5);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    background: rgba(255,248,238,0.08);
+    font-size: 0.9rem;
+  }
+
+  header p.since {
+    margin-top: 8px;
+    font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+    color: #e6d5b0;
+    font-weight: 700;
+  }
+
+  .quick-nav {
+    max-width: 1160px;
+    margin: -26px auto 26px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .quick-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--coffee);
+    background: var(--bg-soft);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: 9px 24px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    transition: transform 200ms ease, background 200ms ease;
+  }
+
+  .quick-nav a:hover {
+    background: var(--coffee);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  .branches {
+    max-width: 960px;
+    margin: 24px auto;
+    background: linear-gradient(180deg, #fffaf0, #f7ead7);
+    border: 2px solid var(--coffee-light);
+    border-radius: 22px;
+    padding: 24px 28px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.9), 0 6px 14px var(--shadow);
+  }
+
+  .branches h2 {
+    text-align: center;
+    color: var(--coffee-light);
+    margin-bottom: 15px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .branch {
+    border-bottom: 1px dashed #c9b28a;
+    padding: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .branch:last-child { border-bottom: none; }
+  .branch b { color: var(--coffee); }
+  .branch span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .branch span::before {
+    content: '⌁';
+    color: var(--gold);
+    font-size: 1.2rem;
+  }
+
+  .branch a {
+    color: #8a5a2b;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #f3e8cb;
+    border: 1px solid #d9b878;
+  }
+
+  .branch a:hover {
+    color: var(--cream);
+    background: var(--coffee);
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .card {
+    background: var(--bg-soft);
+    border: 2px solid var(--coffee);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px var(--shadow);
+    position: relative;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 10%, rgba(217,184,120,0.08) 60%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(58,45,31,0.20);
+  }
+
+  .card h2 {
+    background: linear-gradient(135deg, var(--coffee), #6e4e2e);
+    color: var(--cream);
+    text-align: center;
+    padding: 12px;
+    font-size: 1.38rem;
+    position: relative;
+  }
+
+  .card h2::after {
+    content: '☼';
+    margin-right: 7px;
+    color: var(--gold-bright);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  table th {
+    background: linear-gradient(180deg, #e2d1ab, var(--gold));
+    color: var(--coffee-deep);
+    padding: 8px 5px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  table td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #eadfc7;
+  }
+
+  table td.item-name {
+    text-align: right;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  tr:nth-child(even) { background: #f8f1de; }
+  tr:hover { background: #f0e2bd; }
+
+  .price-single td {
+    text-align: center;
+  }
+
+  .story {
+    max-width: 900px;
+    margin: 30px auto;
+    background: linear-gradient(135deg, #fffaf0, #efe3cc);
+    border: 2px solid var(--coffee-light);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 5px 12px var(--shadow);
+  }
+
+  .story::before {
+    content: 'الحكاية';
+    position: absolute;
+    top: -15px;
+    right: 24px;
+    background: var(--coffee);
+    color: var(--cream);
+    border-radius: 999px;
+    padding: 4px 24px;
+    font-size: 0.88rem;
+  }
+
+  .story img {
+    max-width: 300px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 250px;
+    border: 3px solid var(--gold);
+  }
+
+  .story-text {
+    flex: 2;
+    min-width: 250px;
+  }
+
+  .story-text h2 {
+    color: var(--coffee-light);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+  }
+
+  .story-text p {
+    line-height: 1.9;
+    font-size: 1.05rem;
+  }
+
+  section.category-title {
+    max-width: 1300px;
+    margin: 40px auto 10px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  section.category-title h1 {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--coffee-light), var(--coffee-deep));
+    color: var(--cream);
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: clamp(1.46rem, 3.4vw, 1.98rem);
+    border: 1px solid var(--gold-bright);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.20);
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, var(--coffee-deep), var(--coffee));
+    color: var(--gold);
+    margin-top: 40px;
+  }
+
+  footer p {
+    line-height: 1.8;
+  }
+
+  footer p:first-child {
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 2.4rem; }
+    .branches { padding-inline: 16px; }
+    .branch { justify-content: center; text-align: center; }
+    .branch a { width: 100%; text-align: center; }
+    .container { grid-template-columns: 1fr; }
+  }
+
+  /* ======== رواش — visual refresh ======== */
+  :root {
+    --ink: #172820;
+    --ink-soft: #52635a;
+    --coffee: #123f31;
+    --coffee-deep: #08271e;
+    --coffee-light: #1e7354;
+    --gold: #e6aa3e;
+    --gold-bright: #ffd978;
+    --sand: #f0dfbb;
+    --bg: #f5f0e6;
+    --bg-soft: #fffdf8;
+    --cream: #fffdf8;
+    --olive: #7e9e55;
+    --shadow: rgba(18, 63, 49, 0.14);
+    --tomato: #d9633f;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background:
+      radial-gradient(circle at 8% 18%, rgba(230,170,62,.13) 0 2px, transparent 3px),
+      radial-gradient(circle at 88% 42%, rgba(30,115,84,.10) 0 3px, transparent 4px),
+      linear-gradient(135deg, #f8f4ea 0%, #efe6d4 100%);
+    overflow-x: hidden;
+  }
+
+  body::before, body::after { border-color: rgba(30,115,84,.23); }
+
+  header {
+    min-height: 490px;
+    padding: 46px 22px 100px;
+    text-align: right;
+    background:
+      linear-gradient(110deg, rgba(6,34,25,.98) 0%, rgba(9,55,40,.91) 47%, rgba(9,55,40,.52) 100%),
+      radial-gradient(circle at 75% 20%, rgba(230,170,62,.42), transparent 28%),
+      url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=85') center/cover;
+    isolation: isolate;
+  }
+
+  header::before {
+    content: '';
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(255,217,120,.2);
+    border-radius: 48% 52% 58% 42%;
+    left: auto;
+    right: -150px;
+    top: -180px;
+    transform: rotate(24deg);
+    animation: orbit 16s linear infinite;
+  }
+
+  header::after {
+    content: '';
+    width: 560px;
+    height: 560px;
+    border: 1px dashed rgba(255,255,255,.13);
+    border-radius: 50%;
+    left: auto;
+    right: -230px;
+    top: -245px;
+    font-size: 0;
+    animation: orbit 24s linear infinite reverse;
+  }
+
+  .title-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  header .brand-badge {
+    margin-bottom: 22px;
+    padding: 7px 15px;
+    color: var(--gold-bright);
+    border-color: rgba(255,217,120,.45);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(8px);
+    animation: rise .75s both;
+  }
+
+  header h1 {
+    max-width: 630px;
+    font-size: clamp(3.3rem, 7vw, 6.5rem);
+    letter-spacing: -2px;
+    color: #fff6d6;
+    text-align: right;
+    animation: rise .85s .1s both;
+  }
+
+  header h1::after {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 7px;
+    margin-top: 17px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  header .since {
+    margin-top: 17px;
+    color: #f4d989;
+    font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+    letter-spacing: 1px;
+    animation: rise .85s .2s both;
+  }
+
+  header .since::before {
+    content: 'طعم أصيل • قلبه مصري';
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(255,255,255,.78);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .hero-stamp {
+    position: absolute;
+    left: clamp(20px, 10vw, 150px);
+    bottom: 70px;
+    width: 142px;
+    height: 142px;
+    border: 1px solid rgba(255,217,120,.62);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold-bright);
+    text-align: center;
+    font-size: .82rem;
+    line-height: 1.45;
+    transform: rotate(-12deg);
+    background: rgba(230,170,62,.08);
+    box-shadow: inset 0 0 0 8px rgba(255,217,120,.06);
+    animation: floaty 4s ease-in-out infinite;
+  }
+
+  .hero-stamp strong {
+    display: block;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2.1rem;
+    line-height: 1;
+  }
+
+  .quick-nav {
+    max-width: 1160px;
+    justify-content: flex-start;
+    margin: -30px auto 34px;
+    padding: 0 18px;
+  }
+
+  .quick-nav a {
+    padding: 11px 22px;
+    border: 0;
+    color: var(--cream);
+    background: var(--coffee);
+    box-shadow: 0 12px 24px rgba(8,39,30,.18);
+    transition: transform .25s, background .25s, box-shadow .25s;
+  }
+
+  .quick-nav a:first-child { background: var(--gold); color: var(--coffee-deep); }
+  .quick-nav a:hover { transform: translateY(-5px); box-shadow: 0 15px 28px rgba(8,39,30,.24); }
+
+  .branches {
+    max-width: 1160px;
+    margin: 0 auto 46px;
+    border: 0;
+    border-radius: 28px;
+    padding: 30px 34px;
+    background: rgba(255,253,248,.72);
+    box-shadow: 0 18px 45px rgba(31,58,43,.09);
+    backdrop-filter: blur(12px);
+  }
+
+  .branches h2 { color: var(--coffee); margin-bottom: 18px; }
+  .branch { border-bottom-color: rgba(30,115,84,.18); padding: 15px 0; }
+  .branch span::before { content: '✦'; color: var(--gold); }
+  .branch a { color: var(--coffee); background: #edf5e8; border-color: #bbd3ac; transition: .2s; }
+  .branch a:hover { background: var(--coffee); color: var(--cream); }
+
+  .menu-tools {
+    max-width: 1160px;
+    margin: 0 auto 30px;
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .menu-tools label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-radius: 16px;
+    background: rgba(255,253,248,.8);
+    border: 1px solid rgba(30,115,84,.18);
+    box-shadow: 0 8px 18px rgba(31,58,43,.06);
+  }
+
+  .menu-tools svg { flex: 0 0 auto; color: var(--coffee-light); }
+  #menuSearch {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font: inherit;
+    color: var(--ink);
+  }
+
+  .tools-note {
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: var(--coffee);
+    color: #e8f1df;
+    font-size: .84rem;
+    white-space: nowrap;
+  }
+
+  section.category-title { margin: 48px auto 15px; }
+  section.category-title h1 {
+    background: var(--coffee);
+    padding: 10px 34px;
+    border: 0;
+    border-radius: 13px 13px 13px 3px;
+    box-shadow: 7px 7px 0 var(--gold);
+    letter-spacing: -.5px;
+  }
+
+  .container {
+    max-width: 1160px;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 22px;
+    padding: 0 18px;
+  }
+
+  .card {
+    border: 1px solid rgba(18,63,49,.16);
+    border-radius: 22px;
+    background: rgba(255,253,248,.91);
+    box-shadow: 0 10px 25px rgba(31,58,43,.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+
+  .card::before { background: linear-gradient(120deg, transparent 30%, rgba(230,170,62,.09) 60%, transparent 75%); }
+  .card:hover { transform: translateY(-7px) rotate(.2deg); box-shadow: 0 20px 34px rgba(31,58,43,.15); }
+  .card h2 {
+    padding: 15px 18px;
+    text-align: right;
+    background: linear-gradient(120deg, var(--coffee), var(--coffee-light));
+    font-size: 1.18rem;
+  }
+  .card h2::after { content: '✦'; color: var(--gold-bright); }
+  table { font-size: .9rem; }
+  table th { background: #e6efdd; color: var(--coffee); padding: 10px 6px; }
+  table td { padding: 10px 7px; border-bottom-color: #e8eee0; }
+  table td.item-name { color: var(--ink); }
+  tr:nth-child(even) { background: rgba(239,246,232,.65); }
+  tr:hover { background: #fff0c8; cursor: pointer; }
+  tr.is-hidden { display: none; }
+  td:not(.item-name) { color: var(--tomato); font-weight: 800; }
+
+  .story {
+    max-width: 1160px;
+    margin: 58px auto 34px;
+    border: 0;
+    border-radius: 28px;
+    padding: 30px;
+    background: var(--coffee);
+    color: #eff3dc;
+    box-shadow: 0 18px 40px rgba(8,39,30,.2);
+    overflow: hidden;
+  }
+
+  .story::before { top: 22px; right: 30px; background: var(--gold); color: var(--coffee-deep); }
+  .story::after {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    left: -90px;
+    bottom: -110px;
+    border: 1px solid rgba(255,217,120,.35);
+    border-radius: 50%;
+  }
+
+  .story img { max-width: 390px; border: 0; border-radius: 20px; filter: saturate(.8) contrast(1.05); }
+  .story-text h2 { color: var(--gold-bright); font-size: 2rem; }
+  .story-text p { color: #dce8d3; }
+
+  footer {
+    margin-top: 65px;
+    padding: 34px 25px;
+    background: var(--coffee-deep);
+    color: #f4d989;
+  }
+
+  .order-tray {
+    position: fixed;
+    z-index: 20;
+    left: 22px;
+    bottom: 22px;
+    width: min(355px, calc(100% - 44px));
+    border-radius: 20px;
+    padding: 16px;
+    color: var(--cream);
+    background: rgba(8,39,30,.95);
+    box-shadow: 0 18px 45px rgba(8,39,30,.28);
+    transform: translateY(125%);
+    transition: transform .4s cubic-bezier(.22,1,.36,1);
+    backdrop-filter: blur(14px);
+  }
+
+  .order-tray.open { transform: translateY(0); }
+  .order-tray-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .order-tray h3 { color: var(--gold-bright); font-size: 1rem; }
+  .order-close { border: 0; color: #c9ddc2; background: transparent; cursor: pointer; font-size: 1.2rem; }
+  .order-list { max-height: 125px; overflow: auto; margin: 10px 0; color: #e0ead8; font-size: .82rem; }
+  .order-list div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .order-total { display: flex; justify-content: space-between; margin: 8px 0 12px; font-weight: 800; }
+  .order-cta {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font: inherit;
+    font-weight: 800;
+    color: var(--coffee-deep);
+    background: var(--gold);
+    cursor: pointer;
+  }
+
+  .floating-call {
+    position: fixed;
+    z-index: 15;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--coffee-deep);
+    background: var(--gold);
+    box-shadow: 0 10px 25px rgba(8,39,30,.25);
+    transition: transform .2s;
+  }
+  .floating-call:hover { transform: scale(1.08) rotate(-8deg); }
+  .floating-call svg { width: 24px; }
+
+  .reveal { opacity: 0; transform: translateY(18px); }
+  .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floaty { 0%,100% { transform: rotate(-12deg) translateY(0); } 50% { transform: rotate(-8deg) translateY(-9px); } }
+  @keyframes orbit { to { transform: rotate(360deg); } }
+
+  /* ======== palette correction + animated food ======== */
+  :root {
+    --ink: #3a2d1f;
+    --ink-soft: #5a4631;
+    --coffee: #4a3323;
+    --coffee-deep: #2e2015;
+    --coffee-light: #6e4e2e;
+    --gold: #d9b878;
+    --gold-bright: #f2d896;
+    --sand: #eadfc7;
+    --bg: #f3ecdd;
+    --bg-soft: #fffaf0;
+    --cream: #fffdf8;
+    --olive: #6b7b46;
+    --shadow: rgba(63, 40, 19, 0.14);
+    --tomato: #a34e2d;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 8% 18%, rgba(217,184,120,.13) 0 2px, transparent 3px),
+      radial-gradient(circle at 88% 42%, rgba(110,78,46,.10) 0 3px, transparent 4px),
+      linear-gradient(135deg, #f8f1e2 0%, #eadfc7 100%);
+  }
+
+  body::before, body::after { border-color: rgba(110,78,46,.23); }
+
+  header {
+    background:
+      linear-gradient(110deg, rgba(44,31,13,.98) 0%, rgba(74,51,35,.91) 47%, rgba(74,51,35,.52) 100%),
+      radial-gradient(circle at 75% 20%, rgba(217,184,120,.42), transparent 28%),
+      url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=85') center/cover;
+  }
+
+  header::before { border-color: rgba(242,216,150,.20); }
+  header::after { border-color: rgba(255,248,238,.16); }
+  header .brand-badge { border-color: rgba(242,216,150,.45); }
+  .quick-nav a { box-shadow: 0 12px 24px rgba(46,32,21,.18); }
+  .quick-nav a:hover { box-shadow: 0 15px 28px rgba(46,32,21,.24); }
+  .branches { box-shadow: 0 18px 45px rgba(63,40,19,.09); }
+  .branch { border-bottom-color: rgba(110,78,46,.22); }
+  .branch a { background: #f3e8cb; border-color: #d9b878; }
+  .menu-tools label { border-color: rgba(110,78,46,.20); box-shadow: 0 8px 18px rgba(63,40,19,.06); }
+  .tools-note { color: #fff8e8; }
+  .card { border-color: rgba(74,51,35,.19); box-shadow: 0 10px 25px rgba(63,40,19,.08); }
+  .card:hover { box-shadow: 0 20px 34px rgba(63,40,19,.15); }
+  .card::before { background: linear-gradient(120deg, transparent 30%, rgba(217,184,120,.09) 60%, transparent 75%); }
+  table th { background: #e2d1ab; }
+  table td { border-bottom-color: #eadfc7; }
+  tr:nth-child(even) { background: rgba(248,241,222,.75); }
+  .story { color: #fffaf0; box-shadow: 0 18px 40px rgba(46,32,21,.20); }
+  .story::after { border-color: rgba(242,216,150,.35); }
+  .story-text p { color: #eadfc7; }
+  .order-tray { background: rgba(46,32,21,.96); box-shadow: 0 18px 45px rgba(46,32,21,.28); }
+  .floating-call { box-shadow: 0 10px 25px rgba(46,32,21,.25); }
+
+  .food-scene {
+    position: absolute;
+    left: clamp(18px, 8vw, 125px);
+    bottom: 36px;
+    width: 350px;
+    height: 185px;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 15px 18px rgba(0,0,0,.24));
+    animation: foodSceneFloat 5s ease-in-out infinite;
+  }
+
+  .bean-plate {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    width: 205px;
+    height: 72px;
+    border: 8px solid #ead6ad;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #a9582d 0 28%, #7c3b23 29% 43%, #4a3323 44% 57%, #d9b878 58% 65%, #fff4d6 66%);
+    transform: rotate(-8deg);
+    box-shadow: inset 0 -8px 9px rgba(46,32,21,.35), 0 7px 0 rgba(46,32,21,.36);
+    animation: plateRock 4.2s ease-in-out infinite;
+  }
+
+  .bean-plate::after {
+    content: '';
+    position: absolute;
+    inset: 13px 38px 20px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 35%, #d98642 0 9%, transparent 10%),
+      radial-gradient(circle at 67% 45%, #c56b34 0 10%, transparent 11%),
+      radial-gradient(circle at 48% 68%, #b85c2d 0 12%, transparent 13%),
+      #8f4528;
+  }
+
+  .falafel-basket {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 145px;
+    height: 126px;
+    transform: rotate(8deg);
+    animation: falafelBounce 3.6s ease-in-out infinite;
+  }
+
+  .falafel-basket::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    bottom: 0;
+    width: 120px;
+    height: 48px;
+    border: 7px solid #d9b878;
+    border-top: 0;
+    border-radius: 0 0 50% 50%;
+    background: linear-gradient(140deg, #6e4e2e, #3c281c);
+    box-shadow: inset 0 -9px 0 rgba(0,0,0,.18);
+  }
+
+  .falafel {
+    position: absolute;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border: 3px solid #9a622e;
+    border-radius: 48% 52% 50% 46%;
+    background:
+      radial-gradient(circle at 28% 31%, #f0c36a 0 3px, transparent 4px),
+      radial-gradient(circle at 72% 40%, #7a421f 0 3px, transparent 4px),
+      radial-gradient(circle at 47% 73%, #d8933c 0 3px, transparent 4px),
+      #d38b38;
+    box-shadow: inset -5px -6px 0 rgba(116,61,24,.2), 0 5px 0 rgba(46,32,21,.3);
+  }
+
+  .falafel:nth-child(1) { left: 18px; top: 38px; transform: rotate(-16deg); }
+  .falafel:nth-child(2) { left: 52px; top: 20px; transform: rotate(13deg) scale(1.05); }
+  .falafel:nth-child(3) { left: 88px; top: 39px; transform: rotate(-8deg) scale(.94); }
+  .falafel:nth-child(4) { left: 45px; top: 65px; transform: rotate(24deg) scale(.9); }
+
+  .sesame {
+    position: absolute;
+    right: 10px;
+    top: 24px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #f2d896;
+    border-radius: 50%;
+    animation: sesameSpin 2.5s ease-in-out infinite;
+  }
+
+  @keyframes foodSceneFloat {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-9px) rotate(1deg); }
+  }
+  @keyframes plateRock {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(-4deg) translateY(-3px); }
+  }
+  @keyframes falafelBounce {
+    0%, 100% { transform: rotate(8deg) translateY(0); }
+    50% { transform: rotate(4deg) translateY(-10px); }
+  }
+  @keyframes sesameSpin {
+    0%, 100% { transform: rotate(20deg) scale(1); }
+    50% { transform: rotate(45deg) scale(1.25); }
+  }
+
+  @media (max-width: 700px) {
+    .food-scene {
+      left: 50%;
+      bottom: 18px;
+      width: 235px;
+      height: 118px;
+      transform: translateX(-50%) scale(.72);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .food-scene, .bean-plate, .falafel-basket, .sesame { animation: none; }
+  }
+
+  @media (max-width: 700px) {
+    header { min-height: 440px; padding-inline: 20px; }
+    .title-wrap { align-items: center; text-align: center; }
+    header h1 { font-size: 3.4rem; text-align: center; letter-spacing: -1px; }
+    header h1::after { margin-inline: auto; }
+    header .since { text-align: center; }
+    .hero-stamp { left: 50%; bottom: 26px; width: 92px; height: 92px; font-size: .62rem; transform: translateX(-50%) rotate(-12deg); }
+    .hero-stamp strong { font-size: 1.45rem; }
+    .quick-nav { justify-content: center; }
+    .menu-tools { grid-template-columns: 1fr; }
+    .tools-note { text-align: center; white-space: normal; }
+    .branches { margin-inline: 16px; padding: 24px 18px; }
+    .container { grid-template-columns: 1fr; }
+    .story { margin-inline: 16px; padding: 22px; }
+    .story img { min-width: 100%; }
+    .floating-call { right: 16px; bottom: 16px; }
+    .order-tray { left: 16px; bottom: 16px; width: calc(100% - 90px); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title-wrap">
+    <div class="brand-badge">مطاعم ووجبات تقليدية</div>
+    <h1>فول محمد رواش </h1>
+    <p class="since">منذ 1914</p>
+  </div>
+  <div class="hero-stamp"><div><strong>١١١</strong>سنة من الطعم<br>اللي بيتحكي</div></div>
+  <div class="food-scene" aria-hidden="true">
+    <div class="bean-plate"></div>
+    <div class="falafel-basket">
+      <span class="falafel"></span>
+      <span class="falafel"></span>
+      <span class="falafel"></span>
+      <span class="falafel"></span>
+      <span class="sesame"></span>
+    </div>
+  </div>
+</header>
+
+<nav class="quick-nav">
+  <a href="#sandwiches">السندوتشات</a>
+  <a href="#meals">الأطباق</a>
+  <a href="#story">أصل الحكاية</a>
+</nav>
+
+<div class="menu-tools">
+  <label for="menuSearch">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+    <input id="menuSearch" type="search" placeholder="دور على فول، طعمية، رول..." autocomplete="off">
+  </label>
+  <div class="tools-note">اضغط على أي صنف عشان تضيفه لطلبك</div>
+</div>
+
+<div class="branches">
+  <h2>فروعنا</h2>
+  <div class="branch">
+    <span><b>الفرع الأول:</b> فرع السويس - 48 شارع التحرير</span>
+    <a href="tel:01280855559">📞 01280855559</a>
+  </div>
+  <div class="branch">
+    <span><b>الفرع الثاني:</b> الملاحة الجديدة - أمام مسجد المحروسة</span>
+    <a href="tel:01280855559">📞 01280855559</a>
+  </div>
+  <div class="branch">
+    <span><b>الفرع الثالث:</b> السلام - أمام المستشفى العسكري</span>
+    <a href="tel:01280855559">📞 01280855559</a>
+  </div>
+  <div class="branch">
+    <span><b>الفرع الرابع:</b> مدينتي - كرافت زون بلوك 6</span>
+    <a href="tel:01280855559">📞 01280855559</a>
+  </div>
+</div>
+
+<!-- ============ سندوتشات ============ -->
+<section class="category-title" id="sandwiches"><h1>السندوتشات</h1></section>
+
+<div class="container">
+
+  <div class="card">
+    <h2>سندوتشات الفول</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">فول عادي</td><td>10</td><td>8</td><td>10</td></tr>
+      <tr><td class="item-name">فول دمياطي (زيت ذره)</td><td>12</td><td>12</td><td>10</td></tr>
+      <tr><td class="item-name">فول بزيت الزيتون</td><td>12</td><td>12</td><td>10</td></tr>
+      <tr><td class="item-name">فول ليمون معصر</td><td>12</td><td>12</td><td>10</td></tr>
+      <tr><td class="item-name">فول زيت حار</td><td>12</td><td>12</td><td>10</td></tr>
+      <tr><td class="item-name">فول اسكندراني</td><td>15</td><td>13</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالسمنة البلدي</td><td>20</td><td>18</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالبيض المسلوق</td><td>26</td><td>24</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالبيض المقلي بالسمنه</td><td>26</td><td>24</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالليه</td><td>22</td><td>20</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالبشطة</td><td>22</td><td>20</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالبسطرمة والسجق</td><td>34</td><td>32</td><td>-</td></tr>
+      <tr><td class="item-name">فول بالبسطرمة أو السجق</td><td>24</td><td>22</td><td>-</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات الرول</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">رول صوابع</td><td>30</td></tr>
+      <tr><td class="item-name">رول صوابع ميكس جبن</td><td>40</td></tr>
+      <tr><td class="item-name">رول صوابع (سجق أو بسطرمة أو سجق)</td><td>50</td></tr>
+      <tr><td class="item-name">رول صوابع (كيري أو شيدر أو موتزاريلا أو رومي)</td><td>40</td></tr>
+      <tr><td class="item-name">رول صوابع (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">رول صوابع شيدر (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">رول صوابع رومي (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">رول صوابع موتزاريلا (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">رول بيش مقلي</td><td>40</td></tr>
+      <tr><td class="item-name">رول بيش (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">رول جبنة مقلية</td><td>25</td></tr>
+      <tr><td class="item-name">رول جبنة مقلية (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>50</td></tr>
+      <tr><td class="item-name">رول جبنة (كيري أو موتزاريلا أو شيدر)</td><td>50</td></tr>
+      <tr><td class="item-name">رول جبنة كيري (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>50</td></tr>
+      <tr><td class="item-name">رول جبنة موتزاريلا (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>50</td></tr>
+      <tr><td class="item-name">رول جبنة رومي (بالسجق أو بالبسطرمة أو بالسوسيس)</td><td>55</td></tr>
+      <tr><td class="item-name">ميكس جبن</td><td>65</td></tr>
+      <tr><td class="item-name">ميكس جبن (بسطرمة أو سوسيس)</td><td>65</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات البطاطس</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">بطاطس صوابع بالكاتشب</td><td>16</td><td>16</td><td>14</td></tr>
+      <tr><td class="item-name">بطاطس شيبسي</td><td>15</td><td>15</td><td>13</td></tr>
+      <tr><td class="item-name">بطاطس مهروسة</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">بطاطس مهروسة بزيت الزيتون أو بالسمن البلدي</td><td>19</td><td>19</td><td>17</td></tr>
+      <tr><td class="item-name">مهروسة بالبيض المقلي أو المسلوق</td><td>29</td><td>27</td><td>-</td></tr>
+      <tr><td class="item-name">مهروسة (بالبسطرمة أو بالسجق) بالسمن البلدي</td><td>29</td><td>27</td><td>-</td></tr>
+      <tr><td class="item-name">بطاطس صوابع (شيدر / كيري)</td><td>24</td><td>24</td><td>22</td></tr>
+      <tr><td class="item-name">بطاطس صوابع رومي</td><td>34</td><td>32</td><td>-</td></tr>
+      <tr><td class="item-name">بطاطس صوابع (موتزاريلا / رومي / بسطرمة أو بالسوسيس)</td><td>24</td><td>24</td><td>22</td></tr>
+      <tr><td class="item-name">بطاطس صوابع (موتزاريلا / بسطرمة أو بالسوسيس)</td><td>34</td><td>32</td><td>-</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات البيض</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">بيض مسلوق عادي</td><td>17</td><td>17</td><td>15</td></tr>
+      <tr><td class="item-name">بيض مسلوق (مقلي بالسمن البلدي)</td><td>21</td><td>21</td><td>19</td></tr>
+      <tr><td class="item-name">بيض مسلوق (بالبسطرمة أو بالسجق أو بالسوسيس)</td><td>29</td><td>29</td><td>27</td></tr>
+      <tr><td class="item-name">بيض بيتزا رواش</td><td>39</td><td>39</td><td>37</td></tr>
+      <tr><td class="item-name">بيض بالبسطرمة والسجق</td><td>39</td><td>39</td><td>37</td></tr>
+      <tr><td class="item-name">بيض مقلي بالصوابع</td><td>26</td><td>26</td><td>24</td></tr>
+      <tr><td class="item-name">بيض مقلي بالجبنة الرومي</td><td>31</td><td>31</td><td>29</td></tr>
+      <tr><td class="item-name">بيض مقلي بالجبنة القريش</td><td>26</td><td>26</td><td>24</td></tr>
+      <tr><td class="item-name">بيض شكشوكة</td><td>26</td><td>26</td><td>24</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات الطعمية</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">طعمية</td><td>10</td><td>10</td><td>8</td></tr>
+      <tr><td class="item-name">طعمية طماطم وطحينة</td><td>11</td><td>11</td><td>9</td></tr>
+      <tr><td class="item-name">طعمية بالمشطة</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بابا غنوج</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالشيبسي</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالصوابع</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالمهروسة</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالجبنة القريش</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالباذنجان</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">طعمية بالبيض المسلوق</td><td>20</td><td>20</td><td>18</td></tr>
+      <tr><td class="item-name">طعمية بالبيض المقلي</td><td>24</td><td>24</td><td>22</td></tr>
+      <tr><td class="item-name">طعمية محشية</td><td>15</td><td>15</td><td>13</td></tr>
+      <tr><td class="item-name">طعمية كيري</td><td>24</td><td>24</td><td>22</td></tr>
+      <tr><td class="item-name">طعمية كيري (بالبسطرمة أو سجق / سوسيس)</td><td>34</td><td>34</td><td>32</td></tr>
+      <tr><td class="item-name">طعمية موتزاريلا</td><td>26</td><td>26</td><td>24</td></tr>
+      <tr><td class="item-name">طعمية موتزاريلا (بالبسطرمة أو سجق / سوسيس)</td><td>36</td><td>36</td><td>34</td></tr>
+      <tr><td class="item-name">طعمية بسطرمة</td><td>26</td><td>26</td><td>24</td></tr>
+      <tr><td class="item-name">طعمية سجق</td><td>26</td><td>26</td><td>24</td></tr>
+      <tr><td class="item-name">طعمية ميكس رواش</td><td colspan="3">32</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات أخرى</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">مسقعة</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">باذنجان</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">باذنجان</td><td>14</td><td>14</td><td>12</td></tr>
+      <tr><td class="item-name">جبنة قريش سادة أو بخلطة</td><td>16</td><td>16</td><td>14</td></tr>
+      <tr><td class="item-name">جبنة قريش زيت زيتون</td><td>34</td><td>34</td><td>32</td></tr>
+      <tr><td class="item-name">دياميات (شامي أو بلدي فقط)</td><td colspan="2">14</td><td>12</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>سندوتشات جريل</h2>
+    <table>
+      <tr><th>الصنف</th><th>شامي</th><th>بلدي</th><th>فينو</th></tr>
+      <tr><td class="item-name">جبنة مقلية</td><td>29</td><td>29</td><td>27</td></tr>
+      <tr><td class="item-name">جبنة مقلية (بالبسطرمة أو بالسجق)</td><td>39</td><td>39</td><td>37</td></tr>
+      <tr><td class="item-name">جريل صوابع رومي</td><td>24</td><td>24</td><td>22</td></tr>
+      <tr><td class="item-name">جريل صوابع رومي (بالبسطرمة / سجق /سوسيس)</td><td>34</td><td>34</td><td>32</td></tr>
+      <tr><td class="item-name">ميكس جبن</td><td>39</td><td>39</td><td>37</td></tr>
+      <tr><td class="item-name">ميكس جبن (بسطرمة / سوسيس / سجق)</td><td>49</td><td>49</td><td>47</td></tr>
+      <tr><td class="item-name">مقلية حكاية</td><td>40</td><td>40</td><td>40</td></tr>
+      <tr><td class="item-name">ميكس رواش</td><td colspan="3">40</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>رول ميكسات</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">ميكس رواش</td><td>55</td></tr>
+      <tr><td class="item-name">ميكس ماجنم</td><td>55</td></tr>
+      <tr><td class="item-name">ميكس ميجا</td><td>55</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============ الأطباق ============ -->
+<section class="category-title" id="meals"><h1>الأطباق</h1></section>
+
+<div class="container">
+
+  <div class="card">
+    <h2>اطباق أخرى</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">طبق مسقعة</td><td>30</td></tr>
+      <tr><td class="item-name">طبق فريش بزيت الزيتون</td><td>25</td></tr>
+      <tr><td class="item-name">طبق باباغنوج</td><td>45</td></tr>
+      <tr><td class="item-name">طبق جبنة مقلية 2 قطعة</td><td>25</td></tr>
+      <tr><td class="item-name">طبق باذنجان مقلي</td><td>90</td></tr>
+      <tr><td class="item-name">طبق باذنجان مخلل</td><td>20</td></tr>
+      <tr><td class="item-name">طبق جبنة مقلية (بالسجق أو بالبسطرمة) 2 قطعة</td><td>65</td></tr>
+      <tr><td class="item-name">طبق جبنة قريش بالخلطة</td><td>25</td></tr>
+      <tr><td class="item-name">طبق جبنة مقلية (بالسجق أو بالبسطرمة) 4 قطعة</td><td>120</td></tr>
+      <tr><td class="item-name">طبق جبنة قريش سادة</td><td>25</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>اطباق البطاطس</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">طبق مهروسة</td><td>25</td></tr>
+      <tr><td class="item-name">طبق مهروسة بزيت الزيتون</td><td>30</td></tr>
+      <tr><td class="item-name">طبق مهروسة بالسمن البلدي</td><td>35</td></tr>
+      <tr><td class="item-name">طبق مهروسة بالبيض المسلوق أو المقلي بالسمنة</td><td>50</td></tr>
+      <tr><td class="item-name">طبق مهروسة بالبسطرمة بالسمنة</td><td>60</td></tr>
+      <tr><td class="item-name">طبق مهروسة بالسجق بالسمنة</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بالخضار والموتزاريلا</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بطاطس صوابع</td><td>30</td></tr>
+      <tr><td class="item-name">طبق بطاطس صوابع (شيدر / جبن)</td><td>45</td></tr>
+      <tr><td class="item-name">طبق بطاطس صوابع (شيدر / جبن) بالبسطرمة أو بالسجق أو بالسوسيس</td><td>55</td></tr>
+      <tr><td class="item-name">طبق بطاطس صوابع (موتزاريلا / رومي) بالبسطرمة أو بالسجق أو بالسوسيس</td><td>50</td></tr>
+      <tr><td class="item-name">طبق ميكس رواش</td><td>60</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>علب الفول</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">علبة فول ساده</td><td>45</td></tr>
+      <tr><td class="item-name">علبة فول بالبيض المقلي</td><td>20</td></tr>
+      <tr><td class="item-name">علبة فول جاهز</td><td>45</td></tr>
+      <tr><td class="item-name">علبة فول بالبسطرمة</td><td>25</td></tr>
+      <tr><td class="item-name">علبة فول دمياطي (زيت ذرة)</td><td>45</td></tr>
+      <tr><td class="item-name">علبة فول بالبسطرمة والسجق</td><td>30</td></tr>
+      <tr><td class="item-name">علبة فول زيت حار</td><td>55</td></tr>
+      <tr><td class="item-name">علبة فول بالبيض والسجق</td><td>30</td></tr>
+      <tr><td class="item-name">علبة فول زيت زيتون</td><td>55</td></tr>
+      <tr><td class="item-name">علبة فول اسكندراني</td><td>30</td></tr>
+      <tr><td class="item-name">علبة فول بالسمن البلدي</td><td>55</td></tr>
+      <tr><td class="item-name">علبة فول بالبشطة</td><td>30</td></tr>
+      <tr><td class="item-name">علبة فول بالليه</td><td>70</td></tr>
+      <tr><td class="item-name">علبة فول بالسمنة والصلصة البلدي</td><td>38</td></tr>
+      <tr><td class="item-name">علبة فول بالبيض المسلوق</td><td>45</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>اقراص طعمية</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">علبة عجينة طعمية</td><td>15</td></tr>
+      <tr><td class="item-name">قرص طعمية</td><td>3</td></tr>
+      <tr><td class="item-name">قرص طعمية محشي</td><td>7</td></tr>
+      <tr><td class="item-name">قرص عجة</td><td>20</td></tr>
+      <tr><td class="item-name">قرص طعمية كيري / موتزاريلا / رومي</td><td>15</td></tr>
+      <tr><td class="item-name">قرص طعمية كيري (بسطرمة أو سجق أو سوسيس)</td><td>23</td></tr>
+      <tr><td class="item-name">قرص طعمية موتزاريلا (بسطرمة أو سجق أو سوسيس)</td><td>23</td></tr>
+      <tr><td class="item-name">قرص طعمية رومي (بسطرمة أو سجق أو سوسيس)</td><td>23</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>طاسات جبن</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">طاسة جبن بالبسطرمة</td><td>150</td></tr>
+      <tr><td class="item-name">طاسة جبن بالسجق</td><td>150</td></tr>
+      <tr><td class="item-name">طاسة جبن بالسوسيس</td><td>150</td></tr>
+      <tr><td class="item-name">طاسة جبن ميكس لحوم</td><td>170</td></tr>
+      <tr><td class="item-name">طاسة جبن فراخ</td><td>170</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>اطباق الفول سفره</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">طبق فول عادي</td><td>50</td></tr>
+      <tr><td class="item-name">طبق فول بالبيض المقلي</td><td>35</td></tr>
+      <tr><td class="item-name">طبق فول دمياطي (زيت ذره)</td><td>45</td></tr>
+      <tr><td class="item-name">طبق فول بالبسطرمة</td><td>45</td></tr>
+      <tr><td class="item-name">طبق فول زيت حار</td><td>45</td></tr>
+      <tr><td class="item-name">طبق فول بالبسطرمة والسجق و السحق</td><td>55</td></tr>
+      <tr><td class="item-name">طبق فول زيت زيتون</td><td>60</td></tr>
+      <tr><td class="item-name">طبق فول بالبيض والسجق</td><td>35</td></tr>
+      <tr><td class="item-name">طبق فول اسكندراني</td><td>60</td></tr>
+      <tr><td class="item-name">طبق فول بالسمن البلدي</td><td>40</td></tr>
+      <tr><td class="item-name">طبق فول بالبشطة والسجق والبسطرمة</td><td>70</td></tr>
+      <tr><td class="item-name">طبق فول بالصلصة والسمنة البلدي</td><td>45</td></tr>
+      <tr><td class="item-name">طبق فول بالبيض المسلوق</td><td>43</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>اطباق البيض</h2>
+    <table>
+      <tr><th>الصنف</th><th>السعر</th></tr>
+      <tr><td class="item-name">طبق بيض مقلي ساده</td><td>40</td></tr>
+      <tr><td class="item-name">طبق بيض بالبسطرمة</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بيض بالسجق</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بيض بالبسطرمة والسجق</td><td>60</td></tr>
+      <tr><td class="item-name">طبق بيض مقلي بالخضار والموتزاريلا</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بيض مقلي بالرومي</td><td>50</td></tr>
+      <tr><td class="item-name">طبق بيض مقلي بالجبنة القريش</td><td>45</td></tr>
+      <tr><td class="item-name">طبق بيض شكشوكة</td><td>45</td></tr>
+      <tr><td class="item-name">طبق بيض مسلوق بالطحينة (2 بيضة)</td><td>30</td></tr>
+      <tr><td class="item-name">طبق بيض مسلوق بالسمنة (2 بيضة)</td><td>35</td></tr>
+      <tr><td class="item-name">طبق بيض مدحرج (3 بيضة)</td><td>53</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============ أصل الحكاية ============ -->
+<div class="story" id="story">
+  <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80" alt="أصل الحكاية">
+  <div class="story-text">
+    <h2>أصل الحكاية</h2>
+    <p>
+      حكاية بدأت سنة 1914 ورثها جيل وراجيل لحد ما بقت أكتر من مجرد وصفة، بقت طعم من الزمن الجميل في رواش، كل اكلة وراها حكاية وكل نكهة فيها أصالة وكل تفصيلة معمولة بحب... ودة أصل الحكاية.
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p>جميع الحقوق محفوظة لشركة OMARX</p>
+  <p>تحت إشراف الباشمهندس حمدي محرم فؤاد</p>
+  <p>للتواصل مع OMARX: 01065702869</p>
+</footer>
+
+<a class="floating-call" href="tel:01065702869" aria-label="اتصل بنا">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg>
+</a>
+
+<aside class="order-tray" id="orderTray" aria-live="polite">
+  <div class="order-tray-top">
+    <h3>طلبك السريع</h3>
+    <button class="order-close" id="orderClose" aria-label="إغلاق الطلب">×</button>
+  </div>
+  <div class="order-list" id="orderList"></div>
+  <div class="order-total"><span>الإجمالي التقريبي</span><span id="orderTotal">0 ج.م</span></div>
+  <a class="order-cta" href="tel:01280855559">اتصل واطلب الآن</a>
+</aside>
+
+<script>
+  (function () {
+    const search = document.getElementById('menuSearch');
+    const rows = Array.from(document.querySelectorAll('table tr')).slice(1);
+    const tray = document.getElementById('orderTray');
+    const orderList = document.getElementById('orderList');
+    const totalElement = document.getElementById('orderTotal');
+    const closeButton = document.getElementById('orderClose');
+    const order = [];
+
+    function renderOrder() {
+      orderList.innerHTML = order.length
+        ? order.map((item) => '<div><span>' + item.name + '</span><strong>' + item.price + ' ج.م</strong></div>').join('')
+        : '<div>اختار صنف من المنيو وهنضيفه هنا</div>';
+      totalElement.textContent = order.reduce((sum, item) => sum + item.price, 0) + ' ج.م';
+      tray.classList.toggle('open', order.length > 0);
+    }
+
+    rows.forEach((row) => {
+      row.classList.add('reveal');
+      row.addEventListener('click', function () {
+        const nameCell = row.querySelector('.item-name');
+        if (!nameCell) return;
+        const priceCell = Array.from(row.querySelectorAll('td')).slice(1).find((cell) => /\d/.test(cell.textContent));
+        if (!priceCell) return;
+        const price = parseInt(priceCell.textContent.replace(/[^\d]/g, ''), 10);
+        if (!Number.isNaN(price)) {
+          order.push({ name: nameCell.textContent.trim(), price: price });
+          renderOrder();
+        }
+      });
+    });
+
+    search.addEventListener('input', function () {
+      const value = search.value.trim().toLowerCase();
+      rows.forEach((row) => row.classList.toggle('is-hidden', value && !row.textContent.toLowerCase().includes(value)));
+    });
+
+    closeButton.addEventListener('click', function () {
+      order.length = 0;
+      renderOrder();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .08 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  }());
+</script>
+
+</body>
+</html>
